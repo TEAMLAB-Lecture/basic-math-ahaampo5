@@ -24,7 +24,11 @@ def get_greatest(number_list):
             >>> bm.get_greatest(number_list)
             99
     """
-    greatest_number = None
+    number_list = number_list[:]
+    greatest_number = 0
+    for i in range(len(number_list)):
+        if number_list[i] > greatest_number:
+            greatest_number = number_list[i]
     return greatest_number
 
 
@@ -45,7 +49,11 @@ def get_smallest(number_list):
             >>> bm.get_smallest(number_list)
             11
     """
-    smallest_number = None
+    number_list = number_list[:]
+    smallest_number = 1e9
+    for i in range(len(number_list)):
+        if number_list[i] < smallest_number:
+            smallest_number = number_list[i]
     return smallest_number
 
 
@@ -66,7 +74,12 @@ def get_mean(number_list):
             >>> bm.get_mean(number_list)
             47
     """
-    mean = None
+    number_list = number_list[:]
+    mean = 0
+    summation = 0
+    for i in number_list:
+        summation += i
+    mean = summation/len(number_list)
     return mean
 
 
@@ -90,5 +103,11 @@ def get_median(number_list):
             >>> bm.get_median(number_list2)
             35.5
     """
-    median = None
-    return median
+    number_list = number_list[:]
+    number_list.sort()
+    mid = len(number_list)//2
+    if len(number_list)%2 == 1:
+        return number_list[mid]
+    else:
+        return (number_list[mid] + number_list[mid-1])/2
+print(sorted([6, 75, 79, 41, 38, 77, 1, 30, 69, 83]))
