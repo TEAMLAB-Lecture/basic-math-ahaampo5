@@ -109,4 +109,5 @@ def get_median(number_list):
     if len(number_list)%2 == 1:
         return number_list[mid]
     else:
-        return (number_list[mid] + number_list[mid+1])/2
+        return (number_list[mid] + number_list[mid-1])/2
+print(sorted([6, 75, 79, 41, 38, 77, 1, 30, 69, 83]))
