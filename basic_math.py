@@ -26,7 +26,7 @@ def get_greatest(number_list):
     """
     number_list = number_list[:]
     greatest_number = 0
-    for i in range(1,len(number_list)):
+    for i in range(len(number_list)):
         if number_list[i] > greatest_number:
             greatest_number = number_list[i]
     return greatest_number
@@ -51,7 +51,7 @@ def get_smallest(number_list):
     """
     number_list = number_list[:]
     smallest_number = 1e9
-    for i in range(1,len(number_list)):
+    for i in range(len(number_list)):
         if number_list[i] < smallest_number:
             smallest_number = number_list[i]
     return smallest_number
